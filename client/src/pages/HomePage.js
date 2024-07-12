@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; //initial time e get karva
+import React, { useState, useEffect } from "react"; 
 import Layout from "../components/Layout/Layout";
 // import e from "cors";
 import axios from "axios";
@@ -15,7 +15,7 @@ const HomePage = () => {
   const [cart, setCart] = useCart();
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [checked, setChecked] = useState([]); // multiple value check hooi shake so arr
+  const [checked, setChecked] = useState([]); // multiple value check hoi shake so arr
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -81,11 +81,11 @@ const HomePage = () => {
   //  filter by category
   const handleFilter = (value, id) => {
     try {
-      let all = [...checked]; // jetli be value check hashe te ahi store thai ajshe
+      let all = [...checked]; // jetli be value check hashe te ahi store kaishu
       if (value) {
-        all.push(id); //  value male to id ne push kro
+        all.push(id); //  value male to id ne push krishu
       } else {
-        all = all.filter((c) => c !== id); // categgory na bbase par filter karva
+        all = all.filter((c) => c !== id); // categgory na base par filter karva
       }
       setChecked(all); //setcheck ma assign
     } catch (error) {
@@ -118,18 +118,6 @@ const HomePage = () => {
     <Layout title={"Best-Offers"}>
       <div className="row mt-3">
         <div className="col-md-2">
-          <h4 className="text-center">Filter by category</h4>
-          <div className="d-flex flex-column m-lg-4">
-            {categories.map((c) => (
-              <Checkbox
-                key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)} //id category map thau tyathi aavshe
-              >
-                {c.name}
-              </Checkbox>
-            ))}
-          </div>
-
           {/*price filter*/}
 
           <h4 className="text-center mt-4">Filter by Prices</h4>
@@ -152,8 +140,20 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9">
-         
+          <h4 className="text-center">Filter by category</h4>
+          <div className="d-flex flex-row justify-content-center pl-5 m-lg-4">
+            {categories.map((c) => (
+              <Checkbox
+                key={c._id}
+                onChange={(e) => handleFilter(e.target.checked, c._id)}
+              >
+                {c.name}
+              </Checkbox>
+            ))}
+          </div>
+
           <h1 className="text-center">All Product</h1>
+
           <div className="d-flex flex-wrap justify-content-center ">
             {products?.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
@@ -164,7 +164,9 @@ const HomePage = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description.substring(0, 30)}...</p>
+                  <p className="card-text">
+                    {p.description.substring(0, 30)}...
+                  </p>
                   <p className="card-text">$ {p.price}</p>
                   <button
                     class="btn btn-primary ms-1"
@@ -207,6 +209,6 @@ const HomePage = () => {
     </Layout>
   );
 };
-//auth,null,4  format ma show karva
+
 
 export default HomePage;

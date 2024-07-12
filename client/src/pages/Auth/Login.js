@@ -22,7 +22,6 @@ const Login = () => {
     //    toast.success("Register Succesfully")
     try {
       const res = await axios.post("/api/v1/auth/login", {
-        // aa route par req mokli with nichena parameter
         email,
         password,
       });
@@ -34,8 +33,8 @@ const Login = () => {
           ...auth, //previous auth value as it is
           user: res.data.user,
           token: res.data.token,
-        }); // have aa data user and token home page ma show karashe but refresh karta vyo jashe so local storage ma store karavo padashe
-        localStorage.setItem("auth", JSON.stringify(res.data)); // json data local storage ma support na kre etle JSON.stringify
+        }); 
+        localStorage.setItem("auth", JSON.stringify(res.data)); // json data local storage ma support na kre so JSON.stringify
         navigate(location.state || "/"); //spinner ma location additional object state ma pass karavyo and login ma login thata pela e state ne check karie chie
         //so je state hashe tya redirect or state nai hoi to home page e redirect
       } else {

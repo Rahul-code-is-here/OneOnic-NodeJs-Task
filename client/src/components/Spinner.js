@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"; //useEffect initial time e get karva
-import { useNavigate,useLocation } from "react-router-dom";  // useLocation: unauthorize mano ke dahboard ne access karva mage che to login pachi sidho tya redirect
+import React, { useState, useEffect } from "react"; 
+import { useNavigate,useLocation } from "react-router-dom";  // useLocation: unauthorize mano ke dahboard ne access karva mage che to login pachi sidho tya redirect karishu
 
 //user hoi ne route thi admin ne aceess kare tyare direct login aavtu tu means automatic logout thai jatu tu, ena badle login j re and home page  e redirect karva {path = "login"} {   navigate(`/${path}`}
 const Spinner = ({path = "login"}) => {  //initialy em nam login e j lai jashe

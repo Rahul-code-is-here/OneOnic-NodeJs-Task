@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../../context/auth";
-import { Outlet } from "react-router-dom"; //  <Outlet /> nested routing mate use tahi
+import { Outlet } from "react-router-dom"; //  <Outlet /> nested routing mate use karishu
 import axios from "axios";
 import Spinner from "../../Spinner";
 

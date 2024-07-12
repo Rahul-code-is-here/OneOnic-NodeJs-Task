@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
-import axios from "axios"; //aanathi network request send karishu
-import { useNavigate } from "react-router-dom"; // navigate karva
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 import toast from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./../../styles/registration.css"; // Custom CSS for additional styling
+import "./../../styles/registration.css"; 
 
 const Register = () => {
   const [name, setName] = useState("");

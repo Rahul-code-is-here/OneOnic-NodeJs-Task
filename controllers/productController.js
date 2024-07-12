@@ -197,7 +197,7 @@ export const deleteProductController = async (req, res) => {
 // filters
 export const productFiltersController = async (req, res) => {
   try {
-    const { checked, radio } = req.body;
+    const { checked, radio  } = req.body;
     let args = {}; //check box and args banne check karva args banavyu
     if (checked.length > 0) args.category = checked; //args ni andar category ma checked ma je value hashe tenathi full fill
     if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] }; //gte = greater than equal to
@@ -210,7 +210,7 @@ export const productFiltersController = async (req, res) => {
     console.log(error);
     res.status(400).send({
       success: false,
-      message: "Error WHile Filtering Products",
+      message: "Error While Filtering Products",
       error,
     });
   }

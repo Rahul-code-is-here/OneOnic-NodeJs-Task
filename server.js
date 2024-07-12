@@ -49,7 +49,9 @@ app.get("/", (req, res) => {
 //PORT
 // PORT ne secure rakhva dotenv use kari and process.env pachi .env ma je variable ma port number nakhyo e
 // || means defult 8080 jo env na port ma kai problem aave
-const PORT = process.env.PORT || 8080;
+
+const PORT = process.env.PORT || 8080; // You can replace 5000 with your preferred port number
+
 
 //run listen
 app.listen(PORT, () => {
